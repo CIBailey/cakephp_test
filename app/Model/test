@@ -1,0 +1,124 @@
+CREATE TABLE users (
+    id INT(10) NOT NULL AUTO_INCREMENT,
+    title VARCHAR(50),
+    last_name VARCHAR(50) NOT NULL,
+    first_name VARCHAR(50) NOT NULL,
+    gender INT NOT NULL,
+    birthdate DATE NOT NULL,
+    license INT NOT NULL,
+    address VARCHAR(100) NOT NULL,
+    postal_code INT(5) NOT NULL,
+    city VARCHAR(50) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    photo VARCHAR(500) NOT NULL,
+    age_group INT,
+    studies_id INT,
+    created DATETIME DEFAULT NULL,
+    PRIMARY KEY(id)
+);
+
+CREATE TABLE societys_users (
+    id INT(10) NOT NULL AUTO_INCREMENT,
+    society_id INT(10) NOT NULL,
+    user_id INT(10) NOT NULL,
+    date_start DATE NOT NULL,
+    date_end DATE DEFAULT NULL,
+    PRIMARY KEY(id)
+);
+
+CREATE TABLE societys (
+    id INT(10) NOT NULL AUTO_INCREMENT,
+    user_id INT(10) NOT NULL,
+    siret INT,
+    company VARCHAR(50), 
+    address VARCHAR(100) NOT NULL,   
+    postal_code INT NOT NULL,
+    city VARCHAR(50) NOT NULL,
+    PRIMARY KEY(id)
+);
+
+CREATE TABLE studys (
+    id INT(10) NOT NULL AUTO_INCREMENT,
+    user_id INT(10) NOT NULL,
+    level INT,
+    PRIMARY KEY(id)
+);
+
+
+
+user gender: 
+            1 - Female
+            2 - male
+
+user age group:
+            1 - Moins de 20 ans
+            2 - De 20 à 30
+            3 - De 30 à 40
+            4 - De 40 à 50
+            5 - 50 ans et plus
+
+user license:
+            0 - NonVerified
+            1 - Verified     
+
+studys level: 
+            1 - ??
+            2 - bac +2
+            3 - bac +3
+            4 - ??
+
+
+
+    id INT(10) NOT NULL AUTO_INCREMENT,
+    title VARCHAR,
+    last_name VARCHAR(50) NOT NULL,
+    first_name VARCHAR(50)NOT NULL,
+    gender INT NOT NULL,
+    birthdate DATE NOT NULL,
+    license INT NOT NULL,
+    address VARCHAR NOT NULL,
+    postal_code INT(5) NOT NULL,
+    city VARCHAR(50) NOT NULL,
+    email NOT NULL,
+    photo NOT NULL,
+    age_group INT,
+    studies_id INT DEFAULT NULL,
+    created DATETIME DEFAULT NULL,
+    PRIMARY KEY(id)
+
+INSERT INTO users (
+    id,
+    title,
+    last_name,
+    first_name,
+    gender,
+    birthdate,
+    license,
+    address,
+    postal_code,
+    city,
+    email,
+    photo,
+    age_group,
+    studies_id,
+    created)
+    VALUES ( '11111', 'Ms', 'Bailey', 'Christina', 1, 17/08/1991, 1, '2 rue du docteur blanche', 75016, 'paris', 'christinaibailey@live.com', 'photo', 2, NOW());
+
+
+
+INSERT INTO users (id,
+    title,
+    last_name,
+    first_name,
+    gender,
+    birthdate,
+    license,
+    address,
+    postal_code,
+    city,
+    email,
+      photo,
+    age_group,
+    studies,
+    societies)
+    VALUES ('A title once again', 'And the post body follows.', NOW());
